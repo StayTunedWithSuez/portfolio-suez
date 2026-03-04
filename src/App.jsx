@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className='max-w-[1024px] px-4 mx-auto'>
+      <div className=''>
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>

@@ -19,11 +19,13 @@ function Navbar() {
     const [showMenu, setShowMenu] = useState(false);
 
     return (
-        <nav className="sticky top-0 w-full bg-white shadow-sm py-4 z-50">
-            <div className="max-w-[1024px] px-4 mx-auto flex justify-between items-center">
+        <nav className="sticky top-0 w-full bg-white shadow-sm py-3 z-50">
+            
+            {/* Navmenu for desktop sites */}
+            <div className="container-layout mx-auto flex justify-between items-center">
                 <div>
-                    <a className="font-family-logo text-3xl font-semibold md:text-4xl bg-gradient-to-r from-purple-500 to-purple-900 bg-clip-text text-transparent" href="#">
-                        SuezSohan
+                    <a className="font-family-logo text-3xl font-semibold md:text-4xl" href="#">
+                        Suez<span className="bg-gradient-to-r from-purple-500 to-purple-900 bg-clip-text text-transparent">Sohan</span>
                     </a>
                 </div>
 
@@ -45,6 +47,7 @@ function Navbar() {
                 </div>
             </div>
         
+            {/* Navmenu for mobile sites */}
             <div className={`fixed md:hidden top-0 left-0 w-3/5 h-screen bg-white transition-transform duration-300 ease-in-out z-50 ${showMenu ? "translate-x-0" : "-translate-x-full"}`} >   
                 <FaXmark className="absolute text-2xl text-gray-900 top-5 right-4 cursor-pointer" onClick={() => setShowMenu((prev) => !prev)} />
 
@@ -57,7 +60,8 @@ function Navbar() {
                     <NavMenue itemName = "contact" onClick={() => setShowMenu((prev) => !prev)} />
                 </div>
             </div>
-
+            
+            {/* Navmanu overlay for mobile sites */}
             <div className= {`fixed md:hidden inset-0 backdrop-blur-[2px] bg-black/60 transition-all duration-300 z-40 ${showMenu? "opacity-100": "opacity-0 pointer-events-none"}`} onClick={() => setShowMenu((prev) => !prev)} >
             </div>
             

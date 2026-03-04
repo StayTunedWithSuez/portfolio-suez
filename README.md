@@ -7,17 +7,16 @@ This is my personal portfolio website built using **React** and modern web techn
 - Responsive design (Mobile + Desktop friendly)
 - Modern UI with clean layout
 - Project showcase section
-- About / Skills section
+- About & Skills section
 - Contact section
 - Fast performance with React components
 
 ## Tech Stack
 
 - React
-- Tailwind CSS (or your styling method if used)
-- React Router (if used)
-- Vite / Create React App (mention if used)
-- Any backend / API (if applicable)
+- Tailwind CSS 
+- React Router 
+- Vite 
 
 ## Installation
 
