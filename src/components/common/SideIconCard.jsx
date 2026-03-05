@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 function SideIconCard({icon, keyName, value, serialEven}) {
   return (
-        <div className={`flex rounded-md w-full p-1.5 items-center space-x-6 ${serialEven? "bg-white":" bg-gray-200"}`}>
+        <div className={`flex rounded-md w-full p-1.5 items-center space-x-4 ${serialEven? "bg-white":" bg-gray-200"}`}>
 
             <div className={`px-4 py-2 text-2xl xs:px-6 xs:py-4 rounded-md ${serialEven? "text-gray-900":"bg-purple-700 text-white"}`}>
                 {icon}
