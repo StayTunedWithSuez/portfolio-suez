@@ -3,12 +3,14 @@ import { useState } from "react"
 import {FaBars} from "react-icons/fa"
 import {FaXmark} from "react-icons/fa6"
 
-function NavMenue({itemName}) {
-    return(
-        <a className="group relative" href={`#${itemName}`}>
-            <span className="capitalize text-gray-950 font-semibold text-lg group-hover:text-purple-900 transition duration-200">{itemName}</span>
+function NavMenue({itemName, activeMenu, setActiveMenu}) {
+    
 
-            <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-900 transition-all duration-200 group-hover:w-full"></span>
+    return(
+        <a className="group relative" onClick={() => setActiveMenu(itemName)} href={`#${itemName}`}>
+            <span className={`capitalize text-gray-950 font-semibold text-lg group-hover:text-purple-900 transition duration-200 ${activeMenu === itemName && "text-purple-900"}`}>{itemName}</span>
+
+            <span className={`absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-900 transition-all duration-200 group-hover:w-full ${activeMenu === itemName && "w-full"}`}></span>
         </a>
     )
 }
@@ -17,6 +19,7 @@ function NavMenue({itemName}) {
 function Navbar() {
 
     const [showMenu, setShowMenu] = useState(false);
+    const [activeMenu, setActiveMenu] = useState("");
 
     return (
         <nav className="sticky top-0 w-full bg-white shadow-sm py-3 z-50">
@@ -30,12 +33,12 @@ function Navbar() {
                 </div>
 
                 <div className="hidden md:flex space-x-6">
-                    <NavMenue itemName = "home" />
-                    <NavMenue itemName = "about" />
-                    <NavMenue itemName = "skills" />
-                    <NavMenue itemName = "projects" />
-                    <NavMenue itemName = "experience" />
-                    <NavMenue itemName = "contact" />
+                    <NavMenue itemName = "home" activeMenu = {activeMenu} setActiveMenu = {setActiveMenu} />
+                    <NavMenue itemName = "about" activeMenu = {activeMenu} setActiveMenu = {setActiveMenu} />
+                    <NavMenue itemName = "skills" activeMenu = {activeMenu} setActiveMenu = {setActiveMenu} />
+                    <NavMenue itemName = "projects" activeMenu = {activeMenu} setActiveMenu = {setActiveMenu} />
+                    <NavMenue itemName = "experience" activeMenu = {activeMenu} setActiveMenu = {setActiveMenu} />
+                    <NavMenue itemName = "contact" activeMenu = {activeMenu} setActiveMenu = {setActiveMenu} />
                 </div>
 
                 <div className=" md:hidden">
@@ -73,6 +76,7 @@ function Navbar() {
 
 NavMenue.propTypes = {
     itemName: PropTypes.string.isRequired,
+    activeMenu: PropTypes.string.isRequired,
+    setActiveMenu: PropTypes.func.isRequired,
 }
-
 export default Navbar
