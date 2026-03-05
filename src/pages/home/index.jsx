@@ -1,5 +1,5 @@
-import Hero from "../components/Hero"
-import AboutMe from "../components/AboutMe"
+import Hero from "./Hero"
+import AboutMe from "../about/AboutMe"
 
 function Home() {
   return (
