@@ -1,11 +1,11 @@
 import Hero from "./Hero"
-import AboutMe from "../about/AboutMe"
+import AboutSection from "./AboutSection"
 
 function Home() {
   return (
     <div>
         <Hero />
-        <AboutMe />
+        <AboutSection />
     </div>
   )
 }

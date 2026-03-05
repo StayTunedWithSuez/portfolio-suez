@@ -1,8 +1,8 @@
-import AboutMe from "./AboutMe"
-import Biography from "./Biography";
+import AboutMe from "../about/AboutMe";
+import Biography from "../about/Biography";
 
 
-function About() {
+function AboutSection() {
   return (
         <div id = "about" className='container-layout mt-2'>
 
@@ -21,4 +21,4 @@ function About() {
   )
 }
 
-export default About
+export default AboutSection
