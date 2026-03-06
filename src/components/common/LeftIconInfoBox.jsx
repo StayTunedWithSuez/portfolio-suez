@@ -27,6 +27,6 @@ LeftIconInfoBox.propTypes = {
     Icon: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
-    tags: PropTypes.string.isRequired,
+    tags: PropTypes.array.isRequired,
 }
 export default LeftIconInfoBox

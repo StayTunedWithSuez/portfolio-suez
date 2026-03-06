@@ -1,6 +1,7 @@
 import Hero from "./Hero"
 import AboutSection from "./AboutSection"
 import SkillSection from "./SkillSection"
+import ProjectsSection from "./ProjectsSection"
 
 function Home() {
   return (
@@ -8,8 +9,7 @@ function Home() {
         <Hero />
         <AboutSection />
         <SkillSection />
-
-        <div className='h-125'></div>
+        <ProjectsSection />
     </div>
   )
 }

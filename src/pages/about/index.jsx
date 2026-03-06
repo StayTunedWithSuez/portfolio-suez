@@ -5,7 +5,7 @@ import Education from "./Education";
 
 function About() {
   return (
-        <div id = "about" className='container-layout mt-2'>
+        <div id = "about" className='container-layout my-2'>
 
             <AboutMe />
 
@@ -14,10 +14,6 @@ function About() {
 
                 <Education />
             </div>
-
-
-
-            <div className='h-[500px]'></div>
         </div>
 
 
