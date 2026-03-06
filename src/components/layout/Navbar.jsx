@@ -8,11 +8,11 @@ function NavMenue({itemName, activeMenu, setActiveMenu}) {
     
 
     return(
-        <a className="group relative" onClick={() => setActiveMenu(itemName)} href={`${itemName}`}>
+        <NavLink className="group relative" onClick={() => setActiveMenu(itemName)} to={`${itemName}`}>
             <span className={`capitalize text-gray-950 font-semibold text-lg group-hover:text-purple-900 transition duration-200 ${activeMenu === itemName && "text-purple-900"}`}>{itemName}</span>
 
             <span className={`absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-900 transition-all duration-200 group-hover:w-full ${activeMenu === itemName && "w-full"}`}></span>
-        </a>
+        </NavLink>
     )
 }
 

@@ -10,6 +10,7 @@
     --font-family-logo: "Oswald", sans-serif;
     --w-cs: 1024px;
     --breakpoint-xs: 400px;
+    --color-primaryText: #1f2937;
 }
 
 
@@ -17,6 +18,8 @@ body {
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  color: #1f2937;
+  
 }
 
 

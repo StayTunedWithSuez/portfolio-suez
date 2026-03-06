@@ -1,6 +1,7 @@
 import {BrowserRouter} from 'react-router-dom'
 import AppRoutes from './routes/AppRoutes';
 import Navbar from './components/layout/Navbar'
+import ScrollToTop from './components/common/ScrollToTop';
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <BrowserRouter>
 
       <Navbar />
+      <ScrollToTop />
       <AppRoutes />
       
     </BrowserRouter>

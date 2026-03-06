@@ -1,5 +1,6 @@
 import AboutMe from "./AboutMe"
 import Biography from "./Biography";
+import Education from "./Education";
 
 
 function About() {
@@ -8,8 +9,10 @@ function About() {
 
             <AboutMe />
 
-            <div className='grid md:grid-cols-2 gap-6 items-center py-2'>
+            <div className='grid md:grid-cols-2 gap-6 py-2'>
                 <Biography />
+
+                <Education />
             </div>
 
 

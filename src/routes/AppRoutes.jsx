@@ -2,6 +2,7 @@ import { Routes, Route} from "react-router-dom"
 
 import Home from "../pages/home"
 import About from "../pages/about"
+import Skills from "../pages/skills"
 
 const AppRoutes = () => {
     return (
@@ -10,6 +11,7 @@ const AppRoutes = () => {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/skills" element={<Skills />} />
         </Routes>
 
     )
