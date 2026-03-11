@@ -5,24 +5,14 @@ import ScrollToTop from './components/common/ScrollToTop';
 import Footer from './components/navigation/Footer';
 
 import AuthProvider from './context/AuthProvider';
+import UserLayout from './layouts/UserLayout';
 
 
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-        <div className='min-h-dvh flex flex-col'>
-          <Navbar />
-          <ScrollToTop />
-
-          <main className='flex-1'>
-            <AppRoutes />
-          </main>
-
-
-          <Footer />
-        </div>
-        
+        <AppRoutes />
       </BrowserRouter>
     </AuthProvider>
   );

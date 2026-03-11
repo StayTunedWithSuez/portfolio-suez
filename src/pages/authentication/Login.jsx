@@ -26,7 +26,7 @@ function Login() {
 
     useEffect(() => {
         if(!loading && user?.emailVerified) {
-            navigate("/dashboard")
+            navigate("/user")
         }
     }, [user, loading, navigate]);
 
