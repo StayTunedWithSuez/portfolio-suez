@@ -16,7 +16,7 @@ function MobileUserTopSection({setShowMenu}) {
         <div className="flex space-x-2 items-center">
           <MdAccountCircle className="text-5xl text-gray-200" />
           <div>
-            <h2 className="text-white text-lg font-semibold">{userDetails.firstName}</h2>
+            <h2 className="text-white text-lg font-semibold">{userDetails?.firstName}</h2>
             <Link to={"/user"} onClick={() => setShowMenu((prev) => !prev)} className="text-white">View Profile</Link>
           </div>
         </div>
