@@ -18,13 +18,13 @@ function MobileMenu({showMenu, setShowMenu}) {
 
                 <div className="flex flex-col mt-5 px-4">
 
-                    <div className="flex flex-col items-start gap-3">
-                        <NavMenu itemName = "home" onClick={() => setShowMenu((prev) => !prev)} />
-                        <NavMenu itemName = "about" onClick={() => setShowMenu((prev) => !prev)} />
-                        <NavMenu itemName = "skills" onClick={() => setShowMenu((prev) => !prev)} />
-                        <NavMenu itemName = "projects" onClick={() => setShowMenu((prev) => !prev)} />
-                        <NavMenu itemName = "experience" onClick={() => setShowMenu((prev) => !prev)} />
-                        <NavMenu itemName = "contact" onClick={() => setShowMenu((prev) => !prev)} />
+                    <div onClick={() => setShowMenu((prev) => !prev)} className="flex flex-col items-start gap-3">
+                        <NavMenu itemName = "home"  />
+                        <NavMenu itemName = "about" />
+                        <NavMenu itemName = "skills" />
+                        <NavMenu itemName = "projects" />
+                        <NavMenu itemName = "experience" />
+                        <NavMenu itemName = "contact" />
                     </div>
                     
                     {user && (
