@@ -1,15 +1,17 @@
 
 import NavMenu from "./NavMenu"
-import {FaXmark} from "react-icons/fa6"
 import PropTypes from "prop-types"
+import MobileUserTopSection from "./MobileUserTopSection"
+
 
 function MobileMenu({showMenu, setShowMenu}) {
     return (
         <>
-            <div className={`fixed md:hidden top-0 left-0 w-3/5 h-screen bg-white transition-transform duration-300 ease-in-out z-50 ${showMenu ? "translate-x-0" : "-translate-x-full"}`} >   
-                <FaXmark className="absolute text-2xl text-gray-900 top-5 right-4 cursor-pointer" onClick={() => setShowMenu((prev) => !prev)} />
+            <div className={`fixed md:hidden top-0 left-0 w-2/3 h-screen bg-white transition-transform duration-300 ease-in-out z-50 ${showMenu ? "translate-x-0" : "-translate-x-full"}`} >
+                 
+                 <MobileUserTopSection setShowMenu={setShowMenu} />
 
-                <div className="absolute flex flex-col top-12 left-6 gap-4" onClick={() => setShowMenu((prev) => !prev)} >
+                <div className="flex flex-col items-start mt-8 px-4 gap-4" onClick={() => setShowMenu((prev) => !prev)} >
                     <NavMenu itemName = "home" onClick={() => setShowMenu((prev) => !prev)} />
                     <NavMenu itemName = "about" onClick={() => setShowMenu((prev) => !prev)} />
                     <NavMenu itemName = "skills" onClick={() => setShowMenu((prev) => !prev)} />
