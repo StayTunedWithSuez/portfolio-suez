@@ -39,7 +39,7 @@ function DesktopUserMenu() {
             
             <div onClick={userMenuHandler} className=" flex items-center space-x-2 cursor-pointer transition-transform duration-200 hover:scale-105">
                 <BsPersonCircle className="text-xl" />
-                <span className="text-lg capitalize font-medium">{userDetails?.firstName}</span>
+                <span className="text-lg capitalize font-medium">{userDetails?.firstName?.length > 6 ? userDetails?.firstName?.slice(0, 6) + "...": userDetails?.firstName}</span>
             </div>
 
             <div className={`absolute top-10 -left-16 w-60 transition-all duration-300 ${showUserMenu? "opacity-100 scale-100": "opacity-0 scale-95 pointer-events-none" }`}>
