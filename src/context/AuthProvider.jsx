@@ -1,25 +1,10 @@
 import { useState, useEffect} from "react";
 import PropTypes from "prop-types"
-
-
-
-import {auth, db} from "../config/firebase";
-import {
-   
-    onAuthStateChanged,
-    signInWithEmailAndPassword,
-    createUserWithEmailAndPassword,
-    signOut,
-    sendPasswordResetEmail,
-    sendEmailVerification,
-
-} from "firebase/auth"
-
-import { doc, setDoc, serverTimestamp, getDoc} from "firebase/firestore"
-
-
-
+import authService from "../services/authService";
+import { auth } from "../config/firebase";
+import { onAuthStateChanged } from "firebase/auth"
 import AuthContext from "./AuthContext";
+
 
 const AuthProvider = ({children}) => {
 
@@ -29,61 +14,25 @@ const AuthProvider = ({children}) => {
 
 
 
-    //login function
-    const login = (email, password) => {
-        return signInWithEmailAndPassword(auth, email, password);
-    }
-
-    //signUp function
-    const signUp = async (signUpdata) => {
-        const userCredential = await createUserWithEmailAndPassword(auth, signUpdata.email, signUpdata.password);
-        const newUser = userCredential.user;
-
-        await setDoc(doc(db, "users", newUser.uid), {
-            'firstName': signUpdata.firstName,
-            'lastName':signUpdata.lastName,
-            'email': signUpdata.email,
-            createdAt: serverTimestamp(),
-        })
-        
-        return newUser;
-    }
-
-    //logout function 
-    const logout = () => {
-        return signOut(auth);
-    }
-
-    //Reset password function
-    const resetPassword = (email) => {
-        return sendPasswordResetEmail(auth, email, {
-            url: `${window.location.origin}/login`,
-        });
-    }
-
-    //Email verification
-    const verifyEmail = (user) => {
-        return sendEmailVerification(user, {
-            url: `${window.location.origin}/login`,
-        });
-    };
+    //Service Calls
+    const login = (email, password) => authService.login(email, password);
+    const signUp = (signUpdata) => authService.signUp(signUpdata);
+    const logout = () => authService.logout();
+    const resetPassword = (email) => authService.resetPassword(email);
+    const verifyEmail = (user) => authService.verifyEmail(user);
 
 
 
-    // Get user details from Firestore
-    const getUserDetails = async (uid) => {
+    //Get user details from firestore    
+    const fetchUserDetails = async (uid) => {
         try {
-            const docRef = doc(db, "users", uid);
-            const docSnap = await getDoc(docRef);
-
-            if (docSnap.exists()) {
-                setUserDetails(docSnap.data());
-            }
+            const details = await authService.getUserDetails(uid);
+            if(details) setUserDetails(details)
         } catch (error) {
-            console.error("Failed to fetch user details:", error.message);
+            console.error("Failed to fetch user details: ", error.message);
         }
-    };
-
+    }
+   
 
 
     //listen for auth state changes (persist login)
@@ -91,9 +40,7 @@ const AuthProvider = ({children}) => {
         const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
             
             setUser(currentUser);
-            if(currentUser?.emailVerified) {
-                await getUserDetails(currentUser.uid);
-            }
+            if(currentUser?.emailVerified) await fetchUserDetails(currentUser.uid);
             setLoading(false);
         })
 

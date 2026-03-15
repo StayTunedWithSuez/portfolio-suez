@@ -15,10 +15,12 @@ function MobileUserTopSection({setShowMenu}) {
       <div className="flex w-full bg-black px-4 py-6 justify-between">
         <div className="flex space-x-2 items-center">
           <MdAccountCircle className="text-5xl text-gray-200" />
-          <div>
-            <h2 className="text-white text-lg font-semibold">{userDetails?.firstName?.length > 6 ? userDetails?.firstName?.slice(0, 6) + "...": userDetails?.firstName}</h2>
-            <Link to={"/user"} onClick={() => setShowMenu((prev) => !prev)} className="text-white">View Profile</Link>
-          </div>
+
+        	<div>
+				    <h2 className="text-white text-lg font-semibold">{userDetails?.firstName?.length > 6 ? userDetails?.firstName?.slice(0, 6) + "...": userDetails?.firstName}</h2>
+				    <Link to={"/user"} onClick={() => setShowMenu((prev) => !prev)} className="text-white">View Profile</Link>
+         	 </div>
+
         </div>
 
         <FaXmark className="text-2xl text-gray-200 bg-gray-800 rounded-full h-6 w-6 p-1 cursor-pointer" onClick={() => setShowMenu((prev) => !prev)} />
@@ -51,6 +53,7 @@ function MobileUserTopSection({setShowMenu}) {
 
   )
 }
+
 
 MobileUserTopSection.propTypes = {
   setShowMenu: PropTypes.func.isRequired,
