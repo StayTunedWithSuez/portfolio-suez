@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { MdOutlineDashboard } from "react-icons/md";
 import { RiUserSettingsFill } from "react-icons/ri";
 import { RxExit } from "react-icons/rx";
+import { MdOutlineAdminPanelSettings } from "react-icons/md";
 
 import { useState, useRef, useEffect } from "react";
 
@@ -49,9 +50,12 @@ function DesktopUserMenu() {
                     <div className="absolute h-4 w-4 bg-white border-l-2 border-t-2 border-gray-200 rotate-45 -top-2.25 left-27"></div>
                 
                     <div className="space-y-4">
-                        <Link to={"/user"} onClick={userMenuHandler} className="flex items-center gap-3 transition duration-200 hover:text-purpleLight"><MdOutlineDashboard size={20}/> <span>Dashboard</span></Link>
 
-                        <Link onClick={userMenuHandler} className="flex items-center  gap-3 transition duration-200 hover:text-purpleLight"><RiUserSettingsFill size={20}/> <span>Manage Account</span></Link>
+                        {userDetails?.role === "admin" && <Link to={"/admin"} onClick={userMenuHandler} className="flex items-center gap-3 transition duration-200 hover:text-purpleLight"><MdOutlineAdminPanelSettings size={20}/> <span>Admin Dashboard</span></Link>}
+
+                        <Link to={"/user"} onClick={userMenuHandler} className="flex items-center gap-3 transition duration-200 hover:text-purpleLight"><MdOutlineDashboard size={20}/> <span>{userDetails?.role === "admin"? "User Dashboard": "Dashboard"}</span></Link>
+
+                        <Link to={"/user/manage-account"} onClick={userMenuHandler} className="flex items-center  gap-3 transition duration-200 hover:text-purpleLight"><RiUserSettingsFill size={20}/> <span>Manage Account</span></Link>
 
                         <Link to={"/login"} onClick={logout} className="flex items-center  gap-3 transition duration-200 hover:text-purpleLight cursor-pointer"><RxExit size={20}/><span>Log Out</span></Link>
                     </div>

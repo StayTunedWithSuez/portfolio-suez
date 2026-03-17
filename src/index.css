@@ -13,7 +13,25 @@
     --color-primaryText: #1f2937;
 
     --color-purpleLight: #8200db;
-    --color-purpleDark: #59168b
+    --color-purpleDark: #59168b;
+    --color-purpleBody: #f3e8ff;
+
+      /* Primary */
+    --color-primary: #0066FF;
+    --color-primary-light: #3D8BFF;
+    --color-primary-dark: #0047B3;
+
+    /* Secondary & Accent */
+    --color-secondary: #7A00FF;
+    --color-accent: #FF3D00;
+
+    /* Background & Surface */
+    --color-background: #F5F7FF;
+    --color-surface: #FFFFFF;
+
+    /* Text */
+    --color-text-primary: #0A0A0A;
+    --color-text-secondary: #4A4A4A;
 
 }
 
@@ -22,7 +40,8 @@ body {
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  color: #1f2937;
+  color: #0A0A0A /* #1f2937 */;
+  background: #F5F7FF;
   
 }
 

@@ -8,14 +8,18 @@ import AuthProvider from './context/AuthProvider';
 import UserLayout from './layouts/UserLayout';
 import ErrorBoundary from './components/errorBoundary/ErrorBoundary';
 import ErrorFallbackUI from './components/errorBoundary/ErrorFallbackUI';
+import { Suspense } from 'react';
 
+import PageLoader from './components/suspense/PageLoader';
 
 function App() {
   return (
     <ErrorBoundary fallback = {ErrorFallbackUI}>
       <AuthProvider>
         <BrowserRouter>
-          <AppRoutes />
+          <Suspense fallback = {<PageLoader />}>
+            <AppRoutes />
+          </Suspense>
         </BrowserRouter>
       </AuthProvider>
     </ErrorBoundary>
