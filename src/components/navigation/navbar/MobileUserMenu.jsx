@@ -17,8 +17,8 @@ function MobileUserMenu({setShowMenu}) {
     return (
         <div className="flex flex-col gap-4">
             
-            <span className="text-gray-600 font-medium">My Account</span>
-            <div className="flex flex-col gap-3 font-medium text-lg text-gray-900">
+            <span className="text-text-secondary/90 font-medium">My Account</span>
+            <div className="flex flex-col gap-3 font-medium text-lg text-text-primary/90">
 
                 {userDetails?.role === "admin" && (
                     

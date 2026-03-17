@@ -12,7 +12,7 @@ function MobileMenu({showMenu, setShowMenu}) {
 
     return (
         <>
-            <div className={`fixed md:hidden top-0 left-0 w-2/3 h-screen bg-white transition-transform duration-300 ease-in-out z-50 ${showMenu ? "translate-x-0" : "-translate-x-full"}`} >
+            <div className={`fixed md:hidden top-0 left-0 w-2/3 h-screen bg-surface transition-transform duration-300 ease-in-out z-50 ${showMenu ? "translate-x-0" : "-translate-x-full"}`} >
                  
                 <MobileUserTopSection setShowMenu={setShowMenu} />
 
@@ -29,7 +29,7 @@ function MobileMenu({showMenu, setShowMenu}) {
                     
                     {user && (
                         <>
-                        <div className="bg-gray-200 w-full h-[1.5px] my-5 rounded-full"></div>
+                        <div className="bg-text-secondary/10 w-full h-[1.5px] my-5 rounded-full"></div>
 
                         <MobileUserMenu setShowMenu={setShowMenu} />
                         </> 

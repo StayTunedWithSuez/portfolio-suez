@@ -22,7 +22,7 @@ function DesktopMenu() {
 
             {!user? 
 
-            <Link to={"/login"} className='border-2 border-purpleLight px-4 py-1 font-semibold rounded-lg text-lg transition-all duration-300 hover:bg-purpleLight hover:text-white'>Log in</Link>:
+            <Link to={"/login"} className='border-2 border-accent px-4 py-1 font-semibold rounded-lg text-lg transition-all duration-300 hover:bg-accent/40'>Log in</Link>:
 
             <div>
                 <DesktopUserMenu />

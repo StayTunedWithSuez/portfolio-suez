@@ -31,7 +31,7 @@ function ForgotPassword() {
     return (
         <>
         {!resetEmailSent ? 
-            <div className="flex flex-col gap-6 border border-gray-100 w-full max-w-md p-8 shadow-sm rounded-lg">
+            <div className="flex flex-col gap-6 bg-surface w-full max-w-md p-8 shadow-sm rounded-lg">
 
              <h2 className="text-2xl font-semibold text-center">Reset Password</h2>
 
@@ -52,7 +52,7 @@ function ForgotPassword() {
                     </div>
 
                     <div>
-                        <button className="flex items-center justify-center bg-purple-700 text-white text-lg w-full text-center py-2.5 rounded-full font-semibold cursor-pointer transition duration-300 hover:bg-purple-800">{userLoading? <Spinner /> : "Send Reset Link"}</button>
+                        <button className="flex items-center justify-center bg-primary text-white text-lg w-full text-center py-2.5 rounded-full font-semibold cursor-pointer transition duration-300 hover:bg-primary-dark">{userLoading? <Spinner /> : "Send Reset Link"}</button>
                     </div>
                 
                 </form>

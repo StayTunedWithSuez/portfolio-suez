@@ -5,9 +5,9 @@ import { biographyInfo } from "../../assets/data";
 function Biography() {
     return (
       <div className="space-y-4">
-        <h3 className="text-lg text-gray-900 font-semibold">Biography</h3>
+        <h3 className="text-lg font-semibold">Biography</h3>
         
-        <div>
+        <div className="shadow">
             {biographyInfo.map((item, index) => (
 
                 <SideIconCard 
