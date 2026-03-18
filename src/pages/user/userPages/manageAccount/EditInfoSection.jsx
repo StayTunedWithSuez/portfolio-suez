@@ -80,7 +80,8 @@ function EditInfoSection() {
                 setErrorPassword(error.message);
             }
         } finally {
-            setLoadingPassword(false)
+            setLoadingPassword(false);
+            setPasswordInfo((prev) => ({...prev, currentPassword: "", newPassword: ""}));
         }
     }
 
