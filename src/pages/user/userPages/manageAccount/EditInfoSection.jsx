@@ -183,12 +183,12 @@ function EditInfoSection() {
             <div className="flex flex-col gap-6">
                 <div className="group flex space-x-6 items-center">
 
-                    <h3 onClick={() => setIsPasswordChanging((prev) => !prev)} className="text-lg font-medium  text-primary transition duration-200 cursor-pointer group-hover:text-primary-dark">
+                    <h3 onClick={() => {setIsPasswordChanging((prev) => !prev); setErrorPassword(false)}} className="text-lg font-medium  text-primary transition duration-200 cursor-pointer group-hover:text-primary-dark">
                         Change Password
                     </h3>
 
                     <div >
-                        <MdOutlineKeyboardArrowRight onClick={() => setIsPasswordChanging((prev) => !prev)} className={`transition duration-200 text-primary cursor-pointer group-hover:text-primary-dark ${isPasswordChanging && "rotate-90"}`} size={25} />
+                        <MdOutlineKeyboardArrowRight onClick={() => {setIsPasswordChanging((prev) => !prev); setErrorPassword(false)}} className={`transition duration-200 text-primary cursor-pointer group-hover:text-primary-dark ${isPasswordChanging && "rotate-90"}`} size={25} />
                     </div>
                 </div>
 
