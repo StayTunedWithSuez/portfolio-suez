@@ -11,6 +11,7 @@ import ErrorFallbackUI from './components/errorBoundary/ErrorFallbackUI';
 import { Suspense } from 'react';
 
 import PageLoader from './components/suspense/PageLoader';
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <AuthProvider>
         <BrowserRouter>
           <Suspense fallback = {<PageLoader />}>
+            <Toaster position="top-center" reverseOrder={false} />
             <AppRoutes />
           </Suspense>
         </BrowserRouter>
