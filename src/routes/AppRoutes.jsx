@@ -15,6 +15,8 @@ import UserLayout from "../layouts/UserLayout"
 import AdminLayout from "../layouts/AdminLayout"
 import AdminRoutes from "./AdminRoutes"
 
+import AdminProvider from "../context/AdminProvider"
+
 const AppRoutes = () => {
     return (
 
@@ -38,7 +40,11 @@ const AppRoutes = () => {
             </Route>
 
 
-            <Route element={<AdminLayout />} >
+            <Route element={
+                <AdminProvider>
+                    <AdminLayout />
+                </AdminProvider>
+            } >
                 {AdminRoutes}
             </Route>
         </Routes>

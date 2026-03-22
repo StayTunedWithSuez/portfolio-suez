@@ -28,10 +28,24 @@
     /* Background & Surface */
     --color-background: #F5F7FF;
     --color-surface: #FFFFFF;
+    --color-muted-background: #f0f1f4;
 
     /* Text */
     --color-text-primary: #0A0A0A;
     --color-text-secondary: #4A4A4A;
+
+    --color-text-disabled: #9CA3AF;
+    --color-text-muted: #6B7280;
+
+    --color-text-on-primary: #FFFFFF;
+    --color-text-on-secondary: #FFFFFF;
+    --color-text-on-accent: #FFFFFF;
+
+    
+    --color-text-inverse: #FFFFFF; /* Inverse text (for dark backgrounds) */
+
+    --color-text-link: #0066FF;
+    --color-text-link-hover: #0047B3;
 
 }
 
@@ -46,6 +60,13 @@ body {
 }
 
 
+@layer base {
+
+  * {
+    @apply border-gray-200
+  }
+}
+
 @layer utilities {
   .container-layout {
     max-width: 1128px; /* 1024px */
@@ -53,6 +74,11 @@ body {
     margin-right: auto;
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .admin-card {
+
+    @apply bg-surface border-2 rounded-xl shadow-[3px]
   }
 
   .typewriter{

@@ -25,10 +25,19 @@ function Login() {
 
 
     useEffect(() => {
-        if(!loading && user?.emailVerified) {
-            navigate("/user")
-        }
+        const checkVerification = async () => {
+            if (loading || !user) return;
+
+            await user.reload();
+
+            if (user.emailVerified) {
+                navigate("/user");
+            }
+        };
+
+        checkVerification();
     }, [user, loading, navigate]);
+
 
     const handleChange = (event) => {
         const name = event.target.name;
@@ -50,7 +59,10 @@ function Login() {
                 setResendEmailUser(response.user);
                 await logout()
                 setShowNotVerified(true);
+            } else {
+                navigate("/user");
             }
+            
         } catch (error) {
             console.log(error.message);
             setErrorMessage("The login information you entered is incorrect.");

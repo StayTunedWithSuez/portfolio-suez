@@ -25,11 +25,14 @@ const AuthProvider = ({children}) => {
 
     //Get user details from firestore    
     const fetchUserDetails = async (uid) => {
+        setLoading(true);
         try {
             const details = await authService.getUserDetails(uid);
             if(details) setUserDetails(details)
         } catch (error) {
             console.error("Failed to fetch user details: ", error.message);
+        } finally {
+            setLoading(false);
         }
     }
    
@@ -38,7 +41,7 @@ const AuthProvider = ({children}) => {
     //listen for auth state changes (persist login)
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
-            
+
             setUser(currentUser);
             if(currentUser?.emailVerified) await fetchUserDetails(currentUser.uid);
             setLoading(false);
