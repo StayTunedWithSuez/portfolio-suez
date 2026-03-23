@@ -25,7 +25,7 @@ function Sidebar({sidebarOpen, setSideBarOpen}) {
 
         <>
             {/* side bar */}
-            <aside className={`fixed inset-y-0 left-0 transition-transform duration-200 md:relative flex flex-col bg-surface border-r w-64 overflow-hidden shrink-0 z-50 ${sidebarOpen? "translate-x-0": "-translate-x-full md:translate-x-0"}`}>
+            <aside className={`fixed h-dvh left-0 top-0 overflow-y-auto md:sticky transition-transform duration-200 flex flex-col bg-surface border-r w-64 overflow-x-hidden shrink-0 z-50 ${sidebarOpen? "translate-x-0": "-translate-x-full md:translate-x-0"}`}>
                 
                 {/* logo section */}
                 <div className="flex h-16 border-b items-center justify-between px-4">

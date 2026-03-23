@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom"
 import Sidebar from "../pages/admin/adminComponents/Sidebar"
 import NavbarAdmin from "../pages/admin/adminComponents/NavbarAdmin"
 import { useState } from "react"
+import LoadingSpinner from "../components/common/LoadingSpinner"
 
 function AdminLayout() {
 
@@ -15,7 +16,9 @@ function AdminLayout() {
                 <NavbarAdmin sidebarOpen={sidebarOpen} setSideBarOpen={setSideBarOpen} />
                 
                 <div className="flex flex-col px-4 py-6 md:px-6">
+                    
                     <Outlet />
+                    
                 </div>
             </div>
             

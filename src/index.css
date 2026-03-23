@@ -78,7 +78,7 @@ body {
 
   .admin-card {
 
-    @apply bg-surface border-2 rounded-xl shadow-[3px]
+    @apply bg-surface border rounded-xl shadow-[3px]
   }
 
   .typewriter{

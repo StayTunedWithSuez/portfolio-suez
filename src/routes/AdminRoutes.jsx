@@ -5,13 +5,14 @@ import { Navigate } from "react-router-dom";
 
 const Admin = lazy(() => import("../pages/admin/Admin"));
 const AdminDashboard = lazy(() => import("../pages/admin/AdminDashboard"))
+const UsersPageAdmin = lazy(() => import("../pages/admin/UsersPageAdmin")) 
 
 const AdminRoutes = (
 
     <Route path="admin" element={<ProtectedRoutesAdmin />} >
         <Route index element={<Navigate to="dashboard" replace />} />
         <Route path="dashboard" element = {<AdminDashboard />} />
-        <Route path="users" element = {<Admin />} />
+        <Route path="users" element = {<UsersPageAdmin />} />
         <Route path="result" element = {<Admin />} />
     </Route>
 )

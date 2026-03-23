@@ -8,7 +8,7 @@ function NavbarAdmin({sidebarOpen, setSideBarOpen}) {
     const currentPage = location.pathname.split('/').filter(Boolean).pop();
 
     return (
-        <div className="flex h-16 border-b bg-surface items-center px-4 md:px-6">
+        <div className="sticky top-0 flex h-16 border-b bg-surface items-center px-4 md:px-6">
 
             <div className="flex space-x-6 items-center">
                 {!sidebarOpen && <IoMenu size={30} className="md:hidden cursor-pointer" onClick={() => setSideBarOpen((prev) => !prev)} />}

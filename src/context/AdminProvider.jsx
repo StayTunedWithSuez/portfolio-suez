@@ -28,8 +28,21 @@ function AdminProvider({children}) {
     }, []);
 
 
+    const refetchAllUsers = async () => {
+        setLoading(true);
+        try {
+            const data = await getAllUsers();
+            setAllUsers(data);
+        } catch (error) {
+            console.error("Failed to fetch users:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+
     return (
-        <AdminContext.Provider value={{allUsers, loading}}>
+        <AdminContext.Provider value={{allUsers, loading, refetchAllUsers}}>
             {children}
         </AdminContext.Provider>
     )
